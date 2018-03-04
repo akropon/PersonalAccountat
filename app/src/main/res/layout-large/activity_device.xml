@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tgf.user.personalaccountant.DeviceActivity"
+    android:weightSum="1"
+    android:background="@color/back">
+
+
+    <TextView
+        android:text="Устройство:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_height="wrap_content"
+        android:elevation="0dp">
+
+        <TextView
+            android:text="Имя: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView19"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="str_name"
+            android:ems="10"
+            android:id="@+id/editdev_name"
+            android:layout_weight="1"
+            android:background ="@android:drawable/edit_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Мощность:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView21"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:id="@+id/editdev_power_num"
+            android:layout_width="70dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@android:drawable/edit_text"
+            android:inputType="numberDecimal" />
+
+        <Spinner
+            android:layout_height="match_parent"
+            android:id="@+id/editdev_power_vlt_spn"
+            android:layout_width="140dp"
+            android:gravity="center_vertical"
+            android:background="@android:drawable/btn_dropdown" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_height="wrap_content">
+
+        <TextView
+            android:text="Кол-во: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView18"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:ems="10"
+            android:id="@+id/editdev_amount"
+            android:layout_weight="1"
+            android:background ="@android:drawable/edit_text"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <TextView
+        android:text="Частота использования:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView20"
+        android:layout_weight="0.05"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:ems="10"
+            android:id="@+id/editdev_usfreq_num"
+            android:layout_width="70dp"
+            android:background ="@android:drawable/edit_text"
+            android:inputType="numberDecimal" />
+
+        <Spinner
+            android:id="@+id/editdev_usfreq_vlt_nmr_spn"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@android:drawable/btn_dropdown"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView23"
+            android:gravity="center"
+            android:text="     в/за     "
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <Spinner
+            android:id="@+id/editdev_usfreq_vlt_dnmr_spn"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@android:drawable/btn_dropdown"
+             />
+
+
+    </LinearLayout>
+
+    <!--- <commentexample
+            android:layout_alignBaseline="@+id/textView23"
+            android:layout_alignBottom="@+id/textView23"
+            !! если на деле видна половина окошечка, скорее всего
+            надо удалить эти две строчки !!
+            />  -->
+
+    <Button
+        android:text="ОК"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editdev_btn_ok"
+        android:layout_weight="0.05"
+        android:backgroundTint="@color/white"/>
+
+    <Button
+        android:text="ОТМЕНА"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editdev_btn_cancel"
+        android:layout_weight="0.05"
+        android:backgroundTint="@color/white"/>
+
+</LinearLayout>
+

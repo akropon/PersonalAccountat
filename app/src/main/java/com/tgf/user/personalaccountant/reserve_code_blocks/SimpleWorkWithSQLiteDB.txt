@@ -1,0 +1,156 @@
+// Здесь зарезервирован рабочий на момент 03.04.2017 14:51 фрагмент эксперементального кода
+// из [MainActivity->ReadMemory()], выполняющий:
+//    1) создание полноценной искусственной информации в MemoryModule по Расчетам и Устройствам
+//    2) запись всей этой информации в БД (производится "в лоб")
+//    3) считывание значимой части из БД и вывод ее в логи
+// Цель: демонстрация работоспособной части кода для работы с SQLiteDatabase
+
+// DEBUG begin
+        Calculation calculation = new Calculation();
+        calculation.name = "calc_name1";
+        calculation.period_num = 2;
+        calculation.period_vlt = ValueTypes.HOUR;
+        calculation.tariff = 5;
+
+        calculation.devicesList.add(
+                new Device(
+                        "Лампа-хуямпа",
+                        40, ValueTypes.W,
+                        2,
+                        5, ValueTypes.HOUR, ValueTypes.DAY));
+        calculation.devicesList.add(
+                new Device(
+                        "Холодульник",
+                        10, ValueTypes.W,
+                        1,
+                        24, ValueTypes.HOUR, ValueTypes.DAY));
+        calculation.devicesList.add(
+                new Device(
+                        "Пылесос",
+                        2, ValueTypes.kW,
+                        1,
+                        1, ValueTypes.HOUR, ValueTypes.WEEK));
+
+        Calculation calculation1 = new Calculation();
+        calculation1.name = "calc_name2";
+        calculation1.period_num = 3;
+        calculation1.period_vlt = ValueTypes.YEAR;
+        calculation1.tariff = 10;
+
+        calculation1.devicesList.add(
+                new Device(
+                        "Еще1",
+                        20, ValueTypes.W,
+                        2,
+                        10, ValueTypes.HOUR, ValueTypes.DAY));
+        calculation1.devicesList.add(
+                new Device(
+                        "Еще2",
+                        20, ValueTypes.W,
+                        1,
+                        48, ValueTypes.HOUR, ValueTypes.DAY));
+
+        MemoryModule.calculationsList = new ArrayList<>();
+        MemoryModule.calculationsList.add(calculation);
+        MemoryModule.calculationsList.add(calculation1);
+
+
+
+        DBHelper dbHelper;
+
+
+        Log.d("Akropon", "Удаляем БД");
+//        dbHelper = new DBHelper(this);
+//        String dbName = dbHelper.getDatabaseName();
+        if (SQLiteDatabase.deleteDatabase(this.getDatabasePath(DBHelper.DB_NAME))) {
+            Log.d("Akropon", "БД успено стерта");
+        } else {
+            Log.d("Akropon", "БД не была стерта");
+        }
+
+        Log.d("Akropon", "Записываем в таблицы");
+        dbHelper = new DBHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues cv;
+        for (Calculation calc : MemoryModule.calculationsList ) {
+            cv = new ContentValues();
+            cv.put("name", calc.name);
+            cv.put("period_num", calc.period_num);
+            cv.put("period_vlt", calc.period_vlt);
+            long id_calculation = db.insert("CALCULATIONS", null, cv);
+
+            for (Device dev : calc.devicesList) {
+                cv = new ContentValues();
+                cv.put("id_calculation", id_calculation);
+                cv.put("name", dev.name);
+                cv.put("power_num", dev.power_num);
+                cv.put("power_vlt", dev.power_vlt);
+                cv.put("amount", dev.amount);
+                cv.put("usage_freq_num", dev.usage_freq_num);
+                cv.put("usage_freq_vlt_nmr", dev.usage_freq_vlt_nmr);
+                cv.put("usage_freq_vlt_dnmr", dev.usage_freq_vlt_dnmr);
+                db.insert("DEVICES", null, cv);
+            }
+        }
+        dbHelper.close();
+
+
+
+
+        Log.d("Akropon", "Читаем таблицы");
+        dbHelper = new DBHelper(this);
+        db = dbHelper.getWritableDatabase();
+        Cursor c;
+
+        Log.d("Akropon", "CALCULATIONS");
+        c = db.query("CALCULATIONS", null, null, null, null, null, null);
+        // ставим позицию курсора на первую строку выборки
+        // если в выборке нет строк, вернется false
+        if (c.moveToFirst()) {
+            // определяем номера столбцов по имени в выборке
+            int idColIndex = c.getColumnIndex("id");
+            int nameColIndex = c.getColumnIndex("name");
+
+            do {
+                // получаем значения по номерам столбцов и пишем все в лог
+                Log.d("Akropon",
+                        "ID = " + c.getInt(idColIndex) +
+                                ", name = " + c.getString(nameColIndex));
+                // переход на следующую строку
+                // а если следующей нет (текущая - последняя), то false - выходим из цикла
+            } while (c.moveToNext());
+        } else
+            Log.d("Akropon", "0 rows");
+
+        Log.d("Akropon", "DEVICES");
+        c = db.query("DEVICES", null, null, null, null, null, null);
+        if (c.moveToFirst()) {
+            int idColIndex = c.getColumnIndex("id");
+            int idCalcRowIndex = c.getColumnIndex("id_calculation");
+            int nameColIndex = c.getColumnIndex("name");
+
+            do {
+                Log.d("Akropon",
+                        "ID = " + c.getInt(idColIndex) +
+                                "id_calculation = " + c.getInt(idCalcRowIndex) +
+                                ", name = " + c.getString(nameColIndex));
+            } while (c.moveToNext());
+        } else
+            Log.d("Akropon", "0 rows");
+
+        dbHelper.close();
+
+
+
+
+
+
+        Log.d("Akropon", "Удаляем БД");
+//        dbHelper = new DBHelper(this);
+//        String dbName = dbHelper.getDatabaseName(); // получает по сути тот же DBHelper.DB_NAME
+        if (SQLiteDatabase.deleteDatabase(this.getDatabasePath(DBHelper.DB_NAME))) {
+            Log.d("Akropon", "БД успено стерта");
+        } else {
+            Log.d("Akropon", "БД не была стерта");
+        }
+// DEBUG end

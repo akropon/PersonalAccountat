@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_collapseParallaxMultiplier="1.0">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/device_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/device_power"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="power"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/device_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="amount"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/device_usage_freq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="usage_freq"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/device_cost"
+        android:layout_weight="2"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

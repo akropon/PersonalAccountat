@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tgf.user.personalaccountant.MainActivity"
+    android:background="@color/back2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+    <Button
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:text="Расчет"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClick"
+        android:background="@drawable/button" />
+
+    <Button
+        android:text="Журнал"
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:id="@+id/button11"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClick"
+        android:background="@drawable/button"
+        android:layout_marginTop="4dp"/>
+
+    <Button
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:text="Настройки"
+        android:id="@+id/button2"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClick"
+        android:background="@drawable/button"
+        android:layout_marginTop="4dp"/>
+
+    <Button
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:text="Выход"
+        android:id="@+id/button3"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClick"
+        android:background="@drawable/button"
+        android:layout_marginTop="4dp"/>
+    </LinearLayout>
+</LinearLayout>

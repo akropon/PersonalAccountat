@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tgf.user.personalaccountant.CalculationActivity"
+    android:background="@color/back">
+
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_gravity="center_horizontal"
+        android:text="Расчет:"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <TextView
+            android:text="Название \n расчета:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView11"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/editcalc_name"
+            android:background ="@android:drawable/edit_text"
+            android:inputType="textPersonName"
+            android:text="str_name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Тариф:"
+            android:id="@+id/textView12"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editcalc_tariff"
+            android:background ="@android:drawable/edit_text"
+            android:inputType="numberDecimal"
+            android:text="30.0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="руб. за кВт/час"
+            android:textColor="@color/black"
+            android:id="@+id/textView13" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Период \n рассчета:"
+            android:textColor="@color/black"
+            android:id="@+id/textView14"/>
+
+        <EditText
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editcalc_period_num"
+            android:background ="@android:drawable/edit_text"
+            android:inputType="numberDecimal"
+            android:text="1.0" />
+
+        <Spinner
+            android:layout_width="150dp"
+            android:textColor="@color/black"
+            android:id="@+id/editcalc_period_vlt_spinner"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView15"
+        android:layout_gravity="center_horizontal"
+        android:text="Список устройсв:"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="Назад \n "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editcalc_btn_bck"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:gravity="center_vertical|center|center_horizontal"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:text="Добавить \n прибор"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editcalc_btn_add"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            android:singleLine="false"
+            />
+
+        <Button
+            android:text="Сохранить \n рассчет"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editcalc_btn_save"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <!-- TODO RELEASE удалить к релизу -->
+    <Button
+        android:text="random"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:id="@+id/editcalc_btn_random"
+        android:background="@color/colorAccent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:text="Сумма:  "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView29"
+                android:layout_weight="1"
+                android:gravity="right"
+                tools:textSize="18sp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:text="0 руб"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editcalc_sum_cost"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:id="@+id/editcalc_listview"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@color/white"/>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

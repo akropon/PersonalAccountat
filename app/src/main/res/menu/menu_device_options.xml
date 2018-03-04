@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Изменить"
+        android:id="@+id/mdo_change"
+        android:icon="@drawable/pencil_32x32" />
+    <item android:title="Копировать"
+        android:id="@+id/mdo_copy"/>
+    <item android:title="Вставить перед"
+        android:id="@+id/mdo_paste_before"/>
+    <item android:title="Вставить после"
+        android:id="@+id/mdo_paste_after"/>
+    <item android:title="Удалить"
+        android:id="@+id/mdo_delete"
+        android:icon="@drawable/x_32x32" />
+    <item android:title="Назад"
+        android:id="@+id/mdo_cancel"
+        android:icon="@drawable/run_32x32" />
+</menu>

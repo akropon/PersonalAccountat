@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tgf.user.personalaccountant.DeviceActivity"
+    android:weightSum="1">
+
+
+    <TextView
+        android:text="Устройство:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:gravity="center_horizontal"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_height="wrap_content"
+        android:elevation="0dp">
+
+        <TextView
+            android:text="Имя: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView19" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="str_name"
+            android:ems="10"
+            android:id="@+id/editdev_name"
+            android:layout_weight="1"
+            android:background ="@android:drawable/edit_text" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:elevation="0dp"
+        android:longClickable="false"
+        android:textAlignment="inherit">
+
+        <TextView
+            android:text="Мощность:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/textView21"
+            android:layout_weight="1"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/textView21"
+            android:layout_toLeftOf="@+id/editdev_power_vlt_spn"
+            android:text="0.0"
+            android:id="@+id/editdev_power_num"
+            android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@android:drawable/edit_text"
+            android:inputType="numberDecimal" />
+
+        <Spinner
+            android:layout_height="match_parent"
+            android:id="@+id/editdev_power_vlt_spn"
+            android:layout_width="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:background="@android:drawable/btn_dropdown" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_height="wrap_content">
+
+        <TextView
+            android:text="Кол-во: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView18" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:ems="10"
+            android:id="@+id/editdev_amount"
+            android:layout_weight="1"
+            android:background ="@android:drawable/edit_text"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <TextView
+        android:text="Частота использования:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView20"
+        android:elevation="1dp"
+        android:layout_weight="0.05"
+        android:gravity="center_vertical" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <Spinner
+            android:id="@+id/editdev_usfreq_vlt_nmr_spn"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/editdev_usfreq_num"
+            android:layout_toRightOf="@+id/editdev_usfreq_num"
+            android:background="@android:drawable/btn_dropdown" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/editdev_usfreq_vlt_nmr_spn"
+            android:layout_toEndOf="@+id/editdev_usfreq_vlt_nmr_spn"
+            android:id="@+id/textView23"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp" />
+
+        <Spinner
+            android:id="@+id/editdev_usfreq_vlt_dnmr_spn"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_alignTop="@+id/editdev_usfreq_vlt_nmr_spn"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/textView23"
+            android:layout_toRightOf="@+id/textView23"
+            android:background="@android:drawable/btn_dropdown" />
+
+        <EditText
+            android:id="@+id/editdev_usfreq_num"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="22dp"
+            android:layout_marginStart="22dp"
+            android:background="@android:drawable/edit_text"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="0.0" />
+
+    </RelativeLayout>
+
+    <!--- <commentexample
+            android:layout_alignBaseline="@+id/textView23"
+            android:layout_alignBottom="@+id/textView23"
+            !! если на деле видна половина окошечка, скорее всего
+            надо удалить эти две строчки !!
+            />  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"></LinearLayout>
+
+    <Button
+        android:text="ОК"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editdev_btn_ok" />
+
+    <Button
+        android:text="ОТМЕНА"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editdev_btn_cancel" />
+
+</LinearLayout>
+

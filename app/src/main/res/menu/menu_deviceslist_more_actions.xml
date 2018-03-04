@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Вставить в начало"
+        android:id="@+id/mdma_paste_to_begin"/>
+    <item android:title="Удалить все"
+        android:id="@+id/mdma_delete_all"/>
+    <item android:title="Помощь"
+        android:id="@+id/mdma_help"/>
+</menu>

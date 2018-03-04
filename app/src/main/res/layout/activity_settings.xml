@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tgf.user.personalaccountant.Settings"
+    android:background="@drawable/btn_active">
+
+
+<TextView
+    android:text="Настройки:"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/textView30"
+    android:textAppearance="@style/TextAppearance.AppCompat"
+    android:gravity="center_horizontal"
+    android:textSize="20sp" />
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:layout_height="wrap_content"
+    android:elevation="0dp">
+
+    <TextView
+        android:text="Валюта: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView31"
+        android:textSize="14sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="not found"
+        android:ems="10"
+        android:id="@+id/settings_valuta"
+        android:layout_weight="1"
+        android:background="@drawable/edittext_states"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/black" />
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:elevation="2dp"
+    android:layout_height="48dp"
+    tools:layout_height="48dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:text="Точность: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView32"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:text="(+1)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_accuracy_status"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"/>
+
+    <SeekBar
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:max="6"
+        android:progress="4"
+        android:thumb="@drawable/thumb"
+        android:id="@+id/settings_accuracy"
+        android:layout_weight="1" />
+
+</LinearLayout>
+
+
+    <Button
+        android:text="Отмена"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_btn_cancel"
+        android:background="@drawable/btn_states"
+        android:gravity="center_vertical|center|center_horizontal"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp"/>
+
+    <Button
+        android:text="Сохранить"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_btn_save"
+        android:background="@drawable/btn_states"
+        android:gravity="center_vertical|center|center_horizontal"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp"/>
+
+    <Button
+        android:text="По-умолчанию"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_btn_default"
+        android:background="@drawable/btn_states"
+        android:gravity="center_vertical|center|center_horizontal"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp"/>
+
+    <Button
+        android:text="Помощь"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_btn_help"
+        android:background="@drawable/btn_states"
+        android:gravity="center_vertical|center|center_horizontal"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp"/>
+
+    <!-- TODO RELEASE удалить к релизу -->
+<!--
+    <Button
+        android:text="Удалить БД"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_btn_delete_db"
+        android:background="@color/colorAccent" />
+    <Button
+        android:text="Создать Память"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_btn_create_memory"
+        android:background="@color/colorAccent" />
+    <Button
+        android:text="Добавить пак расчетов"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_btn_add_calc_pack"
+        android:background="@color/colorAccent" />
+-->
+
+</LinearLayout>

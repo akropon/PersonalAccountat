@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/NamePribor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NamePribor"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/Kolvo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kolvo"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/ChastotaUse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ChastotaUse"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/Power"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Power"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/Tarif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tarif"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/Period"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Period"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/Raschet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Raschet"
+        android:textColor="@color/black"/>
+
+</LinearLayout>
